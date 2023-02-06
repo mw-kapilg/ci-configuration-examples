@@ -29,7 +29,8 @@ jobs:
         uses: matlab-actions/setup-matlab@v1
 
       - name: Build MEX file
-        uses: matlab-actions/run-build
+        uses: matlab-actions/run-build@v1.0.0
+        
 
       # # Runs a set of commands using the runners shell
       # - name: Run all tests
