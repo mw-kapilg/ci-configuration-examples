@@ -34,7 +34,7 @@ jobs:
       - name: Run tests
         uses: matlab-actions/run-tests@v1
         with:
-          source-folder: ""
+          source-folder: ci-configuration-examples
 
       # # Runs a set of commands using the runners shell
       # - name: Run all tests
