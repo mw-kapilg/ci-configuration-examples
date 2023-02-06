@@ -31,6 +31,8 @@ jobs:
       - name: Build MEX file
         uses: matlab-actions/run-build@v1
         
+      - run: ls        
+        
       - name: Run tests
         uses: matlab-actions/run-tests@v1
         with:
