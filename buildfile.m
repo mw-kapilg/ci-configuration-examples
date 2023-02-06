@@ -12,6 +12,7 @@ function plan = buildfile
 end
 
 function mexTask(~)
+    cd codeDesign
     mex -setup C
     mex arrayProduct.c
 end
