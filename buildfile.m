@@ -2,13 +2,11 @@ function plan = buildfile
     % Create a plan from the task functions
     plan = buildplan(localfunctions);
     
+    % Make the "mex" task the default task in the plan
     plan.DefaultTasks = "mex";
-    
-%     % Make the "archive" task the default task in the plan
-%     plan.DefaultTasks = "archive";
-%     
-%     % Make the "archive" task dependent on the "check" and "test" tasks
-%     plan("archive").Dependencies = ["check" "test"];
+
+%     % Make the "mex" task dependent on the "check" task
+%     plan("mex").Dependencies = ["check"];
 end
 
 function mexTask(~)
@@ -23,15 +21,3 @@ end
 %     assert(isempty(issues.Issues),formattedDisplayText(issues.Issues))
 % end
 % 
-% function testTask(~)
-%     % Run unit tests
-%     results = runtests(IncludeSubfolders=true,OutputDetail="terse");
-%     assertSuccess(results);
-% end
-% 
-% function archiveTask(~)
-%     % Create archive for sharing
-%     zipFileName = "source_" + ...
-%         string(datetime("now",Format="yyyyMMdd'T'HHmmss"));
-%     zip(zipFileName,"*")
-% end
