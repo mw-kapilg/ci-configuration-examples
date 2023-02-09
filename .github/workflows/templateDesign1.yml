@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with MATLAB Actions
 
-name: Build and package MEX file
+name: Build and test your MEX file
 
 # Controls when the action will run. 
 on:
@@ -10,16 +10,12 @@ on:
   pull_request:
     branches: [ main ]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
 jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
@@ -31,15 +27,7 @@ jobs:
       - name: Build MEX file
         uses: matlab-actions/run-build@v1
         
-      - run: ls        
-        
-      - name: Run tests
+      - name: Run all tests
         uses: matlab-actions/run-tests@v1
         with:
           source-folder: codeDesign
-
-      # # Runs a set of commands using the runners shell
-      # - name: Run all tests
-      #   uses: matlab-actions/run-tests@v1
-      #   with:
-      #     source-folder: code
