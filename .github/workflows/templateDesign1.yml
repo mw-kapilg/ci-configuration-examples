@@ -27,7 +27,23 @@ jobs:
       - name: Build MEX file using buildtool
         uses: matlab-actions/run-build@v1
         
-      - name: Run all tests
+      - name: Run all tests and generate artifacts
         uses: matlab-actions/run-tests@v1
         with:
           source-folder: codeDesign
+          test-results-junit: test-results/results.xml
+          code-coverage-cobertura: code-coverage/coverage.xml
+ 
+      - name: Upload test results artifact
+        uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: test-restuls
+          path: test-results/results.xml
+ 
+      - name: Upload code coverage artifact
+        uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: code-coverage
+          path: code-coverage/coverage.xml
