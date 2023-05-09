@@ -14,5 +14,5 @@ Build:
         echo 'Hello'
         echo 'World!'
         
-    - runMATLABCommand:
+    - matlab-bamboo-plugin:
         command: pwd
