@@ -14,5 +14,5 @@ Build:
         echo 'Hello'
         echo 'World!'
         
-    - run-matlab-command:
+    - runMATLABCommand:
         command: pwd
