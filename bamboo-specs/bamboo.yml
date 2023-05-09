@@ -10,7 +10,8 @@ stages:
 
 Build:
   tasks:
-    - script:
-      - echo 'Hello'
-      - echo 'World!'
-      
+    - script: |
+        echo 'Hello'
+        echo 'World!'
+        
+    - run-matlab-command:
