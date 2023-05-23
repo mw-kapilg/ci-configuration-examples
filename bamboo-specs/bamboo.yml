@@ -10,9 +10,10 @@ stages:
 
 Build:
   tasks:
-    - script:
-      - echo 'Hello'
-#       echo 'World!'
+    - script: |
+        echo 'Hello'
+        echo 'World!'
         
-#     - com.mathworks.ci.matlab-bamboo-plugin.runMATLABCommand:
-#         command: pwd
+    - matlab-bamboo-plugin:
+      - matlabExecutable: MATLAB R2022a
+      - matlabCommand: pwd
