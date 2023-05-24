@@ -13,7 +13,11 @@ Build:
 #     - script: |
 #         echo 'Hello'
 #         echo 'World!'
+
+    - msbuild:
+      - solution: YourSolution.sln
+      - label: a
         
-    - runMATLABCommand:
-      - matlabExecutable: MATLAB R2022a
+#     - runMATLABCommand:
+#       - matlabExecutable: MATLAB R2022a
 #       - matlabCommand: pwd
