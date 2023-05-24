@@ -14,7 +14,7 @@ Build:
 #         echo 'Hello'
 #         echo 'World!'
 
-    - msbuild:
+    - com.atlassian.bamboo.plugin.dotnet:msbuild:
       - solution: YourSolution.sln
       - label: a
         
