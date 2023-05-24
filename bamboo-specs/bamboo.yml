@@ -18,6 +18,6 @@ Build:
 #       - solution: YourSolution.sln
 #       - label: a
         
-    - com.mathworks.ci.matlab-bamboo-plugin:runMATLABCommand:
+    - runMATLABCommand:
       - matlabExecutable: MATLAB R2022a
 #       - matlabCommand: pwd
