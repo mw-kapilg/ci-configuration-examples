@@ -14,10 +14,10 @@ Build:
 #         echo 'Hello'
 #         echo 'World!'
 
-    - com.atlassian.bamboo.plugin.dotnet:msbuild:
-      - solution: YourSolution.sln
-      - label: a
+#     - com.atlassian.bamboo.plugin.dotnet:msbuild:
+#       - solution: YourSolution.sln
+#       - label: a
         
-#     - runMATLABCommand:
-#       - matlabExecutable: MATLAB R2022a
+    - runMATLABCommand:
+      - matlabExecutable: MATLAB R2022a
 #       - matlabCommand: pwd
