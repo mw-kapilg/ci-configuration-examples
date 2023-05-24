@@ -15,5 +15,5 @@ Build:
 #         echo 'World!'
         
     - com.mathworks.ci.matlab-bamboo-plugin:runMATLABCommand:
-      - matlabExecutable: MATLAB R2022a
+      matlabExecutable: MATLAB R2022a
 #       - matlabCommand: pwd
