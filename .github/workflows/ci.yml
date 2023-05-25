@@ -27,7 +27,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
 #       - uses: actions/checkout@v3
       
-      - run: pwd
+      - run: which matlab
       
 #       # Sets up MATLAB on the GitHub Actions runner
 #       - name: Setup MATLAB
