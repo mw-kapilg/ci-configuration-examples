@@ -19,7 +19,7 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     container:
-      image: mathworks/matlab:r2023a
+      image: mathworks/matlab:latest
       
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -28,6 +28,7 @@ jobs:
 #       - uses: actions/checkout@v3
       
       - run: which matlab
+      - run: matlab -batch pwd
       
 #       # Sets up MATLAB on the GitHub Actions runner
 #       - name: Setup MATLAB
