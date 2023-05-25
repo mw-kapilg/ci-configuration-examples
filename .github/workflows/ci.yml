@@ -21,7 +21,7 @@ jobs:
     container:
       image: mathworks/matlab:latest
     env:
-        MLM_LICENSE_FILE: 27000@bgl-nbhoski-l.dhcp.mathworks.com
+        MLM_LICENSE_FILE: 27000@bgl-kapilg-l.dhcp.mathworks.com
       
 
     # Steps represent a sequence of tasks that will be executed as part of the job
