@@ -23,6 +23,11 @@ jobs:
       # Sets up MATLAB on the GitHub Actions runner
       - name: Setup MATLAB
         uses: matlab-actions/setup-matlab@v1
+        
+      - name: Softwares
+        uses: matlab-actions/run-command@v1
+        with:
+          command: ver
 
       - name: Build MEX file using buildtool
         uses: matlab-actions/run-build@v1
