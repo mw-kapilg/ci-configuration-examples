@@ -10,14 +10,14 @@ stages:
 
 Build:
   tasks:
-#     - script: |
-#         echo 'Hello'
-#         echo 'World!'
+    - script: |
+        echo 'Hello'
+        echo 'World!'
 
 #     - com.atlassian.bamboo.plugin.dotnet:msbuild:
 #       - solution: YourSolution.sln
 #       - label: a
         
-    - runMATLABCommand:
-      - matlabExecutable: MATLAB R2022a
+#     - runMATLABCommand:
+#       - matlabExecutable: MATLAB R2022a
 #       - matlabCommand: pwd
