@@ -18,6 +18,6 @@ Build:
 #       - solution: YourSolution.sln
 #       - label: a
         
-    - runMATLABCommand:
+    - Run MATLAB Command:
       - matlabExecutable: MATLAB R2022a
       - matlabCommand: pwd
