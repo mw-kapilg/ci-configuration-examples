@@ -17,7 +17,20 @@ Build:
 #     - com.atlassian.bamboo.plugin.dotnet:msbuild:
 #       - solution: YourSolution.sln
 #       - label: a
+
+        - matlabExecutable: MATLAB R2022a
+        - matlabCommand: pwd
         
-    # - run-matlab-command:
-    #     - matlabExecutable: MATLAB R2022a
-    #     - matlabCommand: pwd
+    - runMATLABTest:
+        - matlabExecutable: MATLAB R2022a
+        - useParallelChecked: 'false'
+        - junit: matlab-artifacts/test-reports/junit.xml
+        - htmlModel: matlab-artifacts/model-coverage
+        - stm: matlab-artifacts/test-reports/results.mldatx
+        - pdf: matlab-artifacts/test-reports/report.pdf
+        - htmlTestResults: matlab-artifacts/test-reports
+        - html: matlab-artifacts/code-coverage
+        - srcfolder: code
+        - strict: 'true'
+        - outputDetail: Default
+        - loggingLevel: Default
