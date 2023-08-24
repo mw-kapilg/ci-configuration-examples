@@ -11,7 +11,7 @@ jobs:
       - matlab/run-tests:
           source-folder: code
           select-by-folder: tests
-          code-coverage-html: matlabTestArtifacts/coverage
+          code-coverage-html: /matlabTestArtifacts/coverage
       - store_artifacts:
           path: /matlabTestArtifacts/coverage
 
