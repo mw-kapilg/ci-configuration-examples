@@ -9,8 +9,8 @@ jobs:
       - checkout
       - matlab/install
       - matlab/run-tests:
-          source-folder: codeSample
-          select-by-folder: testsSample
+          source-folder: code
+          select-by-folder: tests
           code-coverage-html: matlabTestArtifacts/coverage
 
       # As an alternative to run-tests, you can use run-command to execute a MATLAB script, function, or statement.
