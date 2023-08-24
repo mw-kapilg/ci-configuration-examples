@@ -12,7 +12,7 @@ jobs:
           source-folder: code
           select-by-folder: tests
           code-coverage-html: matlabTestArtifacts/coverage
-       - store_artifacts:
+      - store_artifacts:
           path: /matlabTestArtifacts/coverage
 
       # As an alternative to run-tests, you can use run-command to execute a MATLAB script, function, or statement.
