@@ -14,8 +14,10 @@ jobs:
           command: |
             mkdir matlabCommandArtifacts
             echo abc > matlabCommandArtifacts/myfile.txt
+            cd matlabCommandArtifacts
+            echo myfile.txt
       - store_artifacts:
-          path: /matlabCommandArtifacts/
+          path: /matlabCommandArtifacts/myfile.txt
       # - matlab/run-tests:
       #     source-folder: code
       #     select-by-folder: tests
