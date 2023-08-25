@@ -8,12 +8,10 @@ jobs:
     steps:
       - checkout
       # - matlab/install
-      # - matlab/run-command:
-      #     command: 'mkdir matlabCommandArtifacts; cd matlabCommandArtifacts; echo abc > myfile.txt'
       - run:
           command: |
             mkdir matlabCommandArtifacts
-            echo abc > matlabCommandArtifacts/myfile.txt
+            echo <!DOCTYPE html><html><body><h2>HTML Links</h2><p>HTML links are defined with the a tag:</p><a href="https://www.w3schools.com">This is a link</a></body></html> > matlabCommandArtifacts/myfile.txt
             cd matlabCommandArtifacts
             ls
             cat myfile.txt
