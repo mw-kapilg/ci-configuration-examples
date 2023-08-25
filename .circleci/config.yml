@@ -7,17 +7,21 @@ jobs:
       image: ubuntu-2004:202201-02
     steps:
       - checkout
-      - matlab/install
-      - matlab/run-tests:
-          source-folder: code
-          select-by-folder: tests
-          code-coverage-html: /matlabTestArtifacts/coverage
-      - store_artifacts:
-          path: /matlabTestArtifacts/coverage
-      - matlab/run-command:
-          command: 'mkdir matlabCommandArtifacts; cd matlabCommandArtifacts; echo abc > myfile.txt'
+      # - matlab/install
+      # - matlab/run-command:
+      #     command: 'mkdir matlabCommandArtifacts; cd matlabCommandArtifacts; echo abc > myfile.txt'
+      - run:
+          command: |
+            mkdir matlabCommandArtifacts
+            echo abc > matlabCommandArtifacts/myfile.txt
       - store_artifacts:
           path: /matlabCommandArtifacts/
+      # - matlab/run-tests:
+      #     source-folder: code
+      #     select-by-folder: tests
+      #     code-coverage-html: /matlabTestArtifacts/coverage
+      # - store_artifacts:
+      #     path: /matlabTestArtifacts/coverage
 
       # As an alternative to run-tests, you can use run-command to execute a MATLAB script, function, or statement.
       # - matlab/run-command:
