@@ -84,4 +84,3 @@ classdef TestExamples < matlab.unittest.TestCase
     end
 
 end
-

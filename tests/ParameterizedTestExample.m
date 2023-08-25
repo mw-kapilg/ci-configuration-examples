@@ -29,4 +29,3 @@ classdef ParameterizedTestExample < matlab.unittest.TestCase
     end
     
 end
-
