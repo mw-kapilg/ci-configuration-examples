@@ -18,7 +18,7 @@ jobs:
             ls
             cat myfile.txt
       - store_artifacts:
-          path: /matlabCommandArtifacts/myfile.txt
+          path: matlabCommandArtifacts/myfile.txt
       # - matlab/run-tests:
       #     source-folder: code
       #     select-by-folder: tests
