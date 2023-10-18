@@ -13,9 +13,11 @@ Build:
     - script: |
         echo 'Hello'
         echo 'World!'
-    - runMATLABCommand:
-      - matlabExecutable: MATLAB R2022a
-      - matlabCommand: pwd
+    - exampleTask:
+      - myText: 'Hello World!'
+    # - runMATLABCommand:
+    #   - matlabExecutable: MATLAB R2022a
+    #   - matlabCommand: pwd
 
 #     - com.atlassian.bamboo.plugin.dotnet:msbuild:
 #       - solution: YourSolution.sln
