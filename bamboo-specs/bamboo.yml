@@ -12,7 +12,6 @@ Build:
   tasks:
     - script: |
         echo 'Hello'
-        echo 'World!'
     - exampleTask:
         myText: 'Hello World!'
     # - runMATLABCommand:
