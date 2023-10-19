@@ -11,9 +11,9 @@ stages:
 Build:
   tasks:
     - script: |
-        echo 'Hello'
+        echo Hello
     - exampleTask:
-        myText: 'Hello World!'
+        myText: Hello World!
     # - runMATLABCommand:
     #   - matlabExecutable: MATLAB R2022a
     #   - matlabCommand: pwd
