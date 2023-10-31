@@ -11,5 +11,5 @@ stages:
 Build:
   tasks:
     - exampleTask:
-        myText: Hello World!
+        # myText: Hello World!
     # - script: echo Hello
