@@ -12,4 +12,4 @@ Build:
   tasks:
     - exampleTask:
         myText: Hello World!
-    - script: echo Hello
+    # - script: echo Hello
