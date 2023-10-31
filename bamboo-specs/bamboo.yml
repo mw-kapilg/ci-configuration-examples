@@ -1,15 +1,34 @@
 ---
 version: 2
 plan:
-  project-key: MARS
-  key: ROCKET
-  name: Build the rocket
+  project-key: MYP
+  key: MYP
+  name: myPlan
 stages:
-  - Build hull:
-    - Build
-
-Build:
+- Default Stage:
+    manual: false
+    final: false
+    jobs:
+    - Default Job
+Default Job:
+  key: JOB1
   tasks:
-    - exampleTask:
-        # myText: Hello World!
-    # - script: echo Hello
+  - exampleTask:
+      myText: (default) Hello, World!
+
+
+# ---
+# version: 2
+# plan:
+#   project-key: MARS
+#   key: ROCKET
+#   name: Build the rocket
+# stages:
+#   - Build hull:
+#     - Build
+
+# Build:
+#   tasks:
+#     - exampleTask:
+#         # myText: Hello World!
+#     # - script: echo Hello
