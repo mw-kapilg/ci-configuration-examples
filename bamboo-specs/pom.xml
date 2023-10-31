@@ -1,20 +1,19 @@
-public Plan plan() {
-        final Plan plan = new Plan(new Project()
-                .oid(new BambooOid("rnl8i5pnngub"))
-                .key(new BambooKey("MYP"))
-                .name("myProject"),
-            "myPlan",
-            new BambooKey("MYP"))
-            .oid(new BambooOid("rnbjakcftog1"))
-            .enabled(false)
-            .pluginConfigurations(new ConcurrentBuilds())
-            .stages(new Stage("Default Stage")
-                    .jobs(new Job("Default Job",
-                            new BambooKey("JOB1"))
-                            .tasks(new ExampleTaskBuilder()
-                                    .myText("(default) Hello, World! by Kapil"))))
-            .planBranchManagement(new PlanBranchManagement()
-                    .delete(new BranchCleanup())
-                    .notificationForCommitters());
-        return plan;
+public Plan createPlan() {
+        return new Plan(
+                project(),
+                "Plan Name",
+                "PLANKEY")
+                .stages(
+                        new Stage("Default Stage")
+                        .jobs(
+                                new Job(
+                                        "Default Job",
+                                        new BambooKey("JOB1")
+                                )
+                                .tasks(
+                                        new ExampleTaskBuilder()
+                                                .myText("Hello World! by Kapil")
+                                )
+                        )
+                );
 }
