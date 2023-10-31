@@ -10,7 +10,6 @@ stages:
 
 Build:
   tasks:
-    - script: |
-        echo Hello
+    - script: echo Hello
     # - exampleTask:
     #     myText: Hello World!
