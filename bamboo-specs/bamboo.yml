@@ -12,5 +12,5 @@ Build:
   tasks:
     - script: |
         echo Hello
-    - exampleTask:
-        myText: Hello World!
+    # - exampleTask:
+    #     myText: Hello World!
