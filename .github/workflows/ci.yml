@@ -6,7 +6,7 @@ name: MATLAB Build
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+    # branches: [ main ]
   pull_request:
     branches: [ main ]
 
@@ -28,11 +28,16 @@ jobs:
       - name: Setup MATLAB
         uses: matlab-actions/setup-matlab@v1
 
-      # Runs a set of commands using the runners shell
-      - name: Run all tests
-        uses: matlab-actions/run-tests@v1
+      - name: Run command
+        uses: matlab-actions/run-command@v1
         with:
-          source-folder: code
+          command: ver; license('inuse');
+
+      # Runs a set of commands using the runners shell
+      # - name: Run all tests
+      #   uses: matlab-actions/run-tests@v1
+      #   with:
+      #     source-folder: code
 
       # As an alternative to run-tests, you can use run-command to execute a MATLAB script, function, or statement.
       #- name: Run all tests
