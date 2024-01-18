@@ -37,7 +37,14 @@ jobs:
           strict: true
 
       - name: Run build
+        uses: matlab-actions/run-command@v1
+        with:
+          command: addpath("code"); ls;
+      
+      - name: Run build
         uses: matlab-actions/run-build@v1
+
+      - run: ls
 
       # As an alternative to run-tests, you can use run-command to execute a MATLAB script, function, or statement.
       #- name: Run all tests
