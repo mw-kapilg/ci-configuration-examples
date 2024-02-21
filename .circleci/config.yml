@@ -4,8 +4,8 @@ orbs:
 jobs:
   build:
     environment:
-      MATHWORKS_TOKEN: gv8qAx4MC2cqxQLN3CJ0QBWgDFAUp9Ht/lf4DR2m0TyIpbYKRDOSOYi0f76X23BKPpWQLjnl4I3FGAHampAz8xaM9FHEAW4QPj37LnhMUscKmnJf2XS0p6hy4zTbM2c1UznG4/lX0xCvxx1Vvte6qg==
-      MATHWORKS_ACCOUNT: kapilg@mathworks.com
+      MLM_LICENSE_TOKEN: kapilg@mathworks.com|test_token|AAARAYelzOx0ZtlcbAzLqfVklD1U/WR8wE6UNGVy+kwT+AUq8zWnWvSvchpfeU1s+Ryyj6Wi/fO/elTyIS994z7zbk/TiyNJ/amAZNVKZMQz8SWQplW2fj+fL9uRY7X2meObVT6LA0pzE4QGvKt9wmQKAIsNt1AlcRznzyk82E6bPdWiaw+fjwk
+      # MATHWORKS_ACCOUNT: kapilg@mathworks.com
     machine:
       image: ubuntu-2004:202201-02
     steps:
@@ -14,7 +14,7 @@ jobs:
       - run:
           command: |
             echo "$PATH"
-            echo "$MATHWORKS_ACCOUNT"
+            # echo "$MATHWORKS_ACCOUNT"
             matlab-batch pwd
             # mkdir matlabCommandArtifacts
             # echo '<!DOCTYPE html><html><body><h2>HTML Links</h2><p>HTML links are defined with the a tag:</p><a href="https://www.w3schools.com">This is a link</a></body></html>' > matlabCommandArtifacts/myfile.html
