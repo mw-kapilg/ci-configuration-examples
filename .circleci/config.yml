@@ -1,22 +1,23 @@
 version: 2.1
 orbs:
-  matlab: mathworks/matlab@0
+  matlab: mathworks/matlab@1
 jobs:
   build:
     machine:
       image: ubuntu-2004:202201-02
     steps:
-      - checkout
-      # - matlab/install
+      # - checkout
+      - matlab/install
       - run:
           command: |
-            mkdir matlabCommandArtifacts
-            echo '<!DOCTYPE html><html><body><h2>HTML Links</h2><p>HTML links are defined with the a tag:</p><a href="https://www.w3schools.com">This is a link</a></body></html>' > matlabCommandArtifacts/myfile.html
+            matlab -batch pwd
+            # mkdir matlabCommandArtifacts
+            # echo '<!DOCTYPE html><html><body><h2>HTML Links</h2><p>HTML links are defined with the a tag:</p><a href="https://www.w3schools.com">This is a link</a></body></html>' > matlabCommandArtifacts/myfile.html
             # cd matlabCommandArtifacts
             # ls
             # cat myfile.html
-      - store_artifacts:
-          path: matlabCommandArtifacts/
+      # - store_artifacts:
+      #     path: matlabCommandArtifacts/
       # - matlab/run-tests:
       #     source-folder: code
       #     select-by-folder: tests
