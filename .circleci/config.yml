@@ -1,61 +1,61 @@
-version: 2.1
-orbs:
-  matlab: mathworks/matlab@1
+# version: 2.1
+# orbs:
+#   matlab: mathworks/matlab@1
 
-executors:
-  linux: # a Linux VM running Ubuntu 20.04
-    machine:
-      image: default
-  macos: # macOS executor running Xcode
-    macos:
-      xcode: 14.2.0
-  windows:
-    resource_class: "windows.medium"
-    machine:
-      image: 'windows-server-2022-gui:current' 
-      # MATLAB installation seems to fail when we use "default" as the image name - https://app.circleci.com/pipelines/github/tsharmaMW/ci-configuration-examples/112/workflows/9a3f2117-5e4e-431e-9717-c947e08cb50c/jobs/207
+# executors:
+#   linux: # a Linux VM running Ubuntu 20.04
+#     machine:
+#       image: default
+#   macos: # macOS executor running Xcode
+#     macos:
+#       xcode: 14.2.0
+#   windows:
+#     resource_class: "windows.medium"
+#     machine:
+#       image: 'windows-server-2022-gui:current' 
+#       # MATLAB installation seems to fail when we use "default" as the image name - https://app.circleci.com/pipelines/github/tsharmaMW/ci-configuration-examples/112/workflows/9a3f2117-5e4e-431e-9717-c947e08cb50c/jobs/207
 
-jobs:
-  compile-and-test-mex:
-    parameters:
-      os:
-        type: executor
-    executor: << parameters.os >>
-    steps:
-      - checkout
-      - matlab/install
-      - matlab/run-build:
-          tasks: mex test
-      - store_artifacts:
-          path: test-results/results.xml
-      - persist_to_workspace:
-          root: .
-          paths:
-            - toolbox/*.mex*
+# jobs:
+#   compile-and-test-mex:
+#     parameters:
+#       os:
+#         type: executor
+#     executor: << parameters.os >>
+#     steps:
+#       - checkout
+#       - matlab/install
+#       - matlab/run-build:
+#           tasks: mex test
+#       - store_artifacts:
+#           path: test-results/results.xml
+#       - persist_to_workspace:
+#           root: .
+#           paths:
+#             - toolbox/*.mex*
 
-  create-and-release-toolbox:
-    machine:
-      image: ubuntu-2204:2024.01.1
-    steps:
-      - checkout
-      - matlab/install
-      - attach_workspace:
-          at: .
-      - matlab/run-build:
-          tasks: packageToolbox
-      - run:
-          name: "Publish Release on GitHub"
-          command: |
-            go install github.com/tcnksm/ghr@latest
-            ghr -t ${GITHUB_TOKEN} -c ${CIRCLE_SHA1} -n "Cross-Platform Array Product Toolbox" <<pipeline.id>> toolbox.mltbx
+#   create-and-release-toolbox:
+#     machine:
+#       image: ubuntu-2204:2024.01.1
+#     steps:
+#       - checkout
+#       - matlab/install
+#       - attach_workspace:
+#           at: .
+#       - matlab/run-build:
+#           tasks: packageToolbox
+#       - run:
+#           name: "Publish Release on GitHub"
+#           command: |
+#             go install github.com/tcnksm/ghr@latest
+#             ghr -t ${GITHUB_TOKEN} -c ${CIRCLE_SHA1} -n "Cross-Platform Array Product Toolbox" <<pipeline.id>> toolbox.mltbx
 
-workflows:
-  toolbox-create-package-release:
-    jobs:
-      - compile-and-test-mex:
-          matrix:
-            parameters:
-              os: [linux, macos, windows]
-      - create-and-release-toolbox:
-          requires:
-            - compile-and-test-mex
+# workflows:
+#   toolbox-create-package-release:
+#     jobs:
+#       - compile-and-test-mex:
+#           matrix:
+#             parameters:
+#               os: [linux, macos, windows]
+#       - create-and-release-toolbox:
+#           requires:
+#             - compile-and-test-mex
