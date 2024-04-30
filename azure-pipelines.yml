@@ -15,8 +15,8 @@ jobs:
       - task: RunMATLABBuild@1
         inputs:
           tasks: mex test
-        env:
-          MLM_LICENSE_TOKEN: $(MLM_LICENSE_TOKEN)
+        # env:
+        #   MLM_LICENSE_TOKEN: $(MLM_LICENSE_TOKEN)
       - publish: 'test-results/results.xml'
         artifact: 'test-results-$(imageName)'
       - task: CopyFiles@2
@@ -52,7 +52,7 @@ jobs:
       - task: GitHubRelease@1
         inputs:
           # Specifies the name of the GitHub service connection to use to connect to the GitHub repository (OAuth or PAT)
-          gitHubConnection: tsharmaMW
+          gitHubConnection: mw-kapilg
           title: "Cross-Platform Array Product Toolbox"
           assets: 'toolbox.mltbx'
           tagSource: 'userSpecifiedTag'
