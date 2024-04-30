@@ -45,8 +45,8 @@ jobs:
       - task: RunMATLABBuild@1
         inputs:
           tasks: packageToolbox
-        env:
-          MLM_LICENSE_TOKEN: $(MLM_LICENSE_TOKEN)
+        # env:
+        #   MLM_LICENSE_TOKEN: $(MLM_LICENSE_TOKEN)
           
         # https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/reference/github-release-v1
       - task: GitHubRelease@1
