@@ -36,10 +36,10 @@ jobs:
           # use-parallel: true
           # strict: true
 
-      # - name: Run command
-      #   uses: matlab-actions/run-command@v2
-      #   with:
-      #     command: addpath("code"); ls;
+      - name: Run command
+        uses: matlab-actions/run-command@v2
+        with:
+          command: addpath("code"); runtests;
       
       # - name: Run build
       #   uses: matlab-actions/run-build@v2
