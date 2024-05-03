@@ -39,7 +39,7 @@ jobs:
       - name: Run command
         uses: matlab-actions/run-command@v2
         with:
-          command: addpath("code"); runtests;
+          command: addpath('code'); runtests('tests');
       
       # - name: Run build
       #   uses: matlab-actions/run-build@v2
