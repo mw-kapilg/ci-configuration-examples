@@ -29,20 +29,20 @@ jobs:
         uses: matlab-actions/setup-matlab@v2
 
       # Runs a set of commands using the runners shell
-      # - name: Run tests
-      #   uses: matlab-actions/run-tests@v2
-      #   with:
-      #     source-folder: code
-      #     use-parallel: true
-      #     strict: true
-
-      - name: Run command
-        uses: matlab-actions/run-command@v2
+      - name: Run tests
+        uses: matlab-actions/run-tests@v2
         with:
-          command: addpath("code"); ls;
+          source-folder: code
+          # use-parallel: true
+          # strict: true
+
+      # - name: Run command
+      #   uses: matlab-actions/run-command@v2
+      #   with:
+      #     command: addpath("code"); ls;
       
-      - name: Run build
-        uses: matlab-actions/run-build@v2
+      # - name: Run build
+      #   uses: matlab-actions/run-build@v2
 
       - run: ls
 
