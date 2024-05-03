@@ -33,7 +33,7 @@ jobs:
       - name: Run command
         uses: matlab-actions/run-command@v2
         with:
-          command: addpath('code'); runtests('tests');
+          command: import matlab.unittest.TestRunner; addpath(genpath('code')); suite = testsuite(pwd, 'IncludeSubfolders', true); runner = TestRunner.withTextOutput(); results = runner.run(suite); display(results); assertSuccess(results);
 
       - name: Run tests
         uses: matlab-actions/run-tests@v2
