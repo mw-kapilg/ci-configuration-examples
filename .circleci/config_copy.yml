@@ -2,11 +2,12 @@ version: 2.1
 orbs:
   matlab: mathworks/matlab@0
 jobs:
-  build:
+  build_copy:
     machine:
       image: ubuntu-2004:202201-02
     steps:
       - checkout
+      - run: echo "This is the copy"
       - matlab/install
       - matlab/run-tests:
           source-folder: code
