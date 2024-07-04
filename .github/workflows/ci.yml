@@ -45,7 +45,7 @@ jobs:
       - name: Run build
         uses: matlab-actions/run-build@v2
 
-      # - run: ls
+      - run: ls
 
       # As an alternative to run-tests, you can use run-command to execute a MATLAB script, function, or statement.
       #- name: Run all tests
