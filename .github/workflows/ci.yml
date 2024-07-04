@@ -30,22 +30,22 @@ jobs:
 
           
 
-      - name: Run command
-        uses: matlab-actions/run-command@v2
-        with:
-          command: import matlab.unittest.TestRunner; addpath(genpath('code')); suite = testsuite(pwd, 'IncludeSubfolders', true); runner = TestRunner.withTextOutput(); results = runner.run(suite); display(results); assertSuccess(results);
+      # - name: Run command
+      #   uses: matlab-actions/run-command@v2
+      #   with:
+      #     command: import matlab.unittest.TestRunner; addpath(genpath('code')); suite = testsuite(pwd, 'IncludeSubfolders', true); runner = TestRunner.withTextOutput(); results = runner.run(suite); display(results); assertSuccess(results);
 
-      - name: Run tests
-        uses: matlab-actions/run-tests@v2
-        with:
-          source-folder: code
-          # use-parallel: true
-          # strict: true
+      # - name: Run tests
+      #   uses: matlab-actions/run-tests@v2
+      #   with:
+      #     source-folder: code
+      #     # use-parallel: true
+      #     # strict: true
       
-      # - name: Run build
-      #   uses: matlab-actions/run-build@v2
+      - name: Run build
+        uses: matlab-actions/run-build@v2
 
-      - run: ls
+      # - run: ls
 
       # As an alternative to run-tests, you can use run-command to execute a MATLAB script, function, or statement.
       #- name: Run all tests
