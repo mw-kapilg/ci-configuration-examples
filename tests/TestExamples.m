@@ -31,6 +31,7 @@ classdef TestExamples < matlab.unittest.TestCase
             doyActual = dayofyear(dateStr);
 
             % Verify that the two are equal
+            testCase.verifyEqual(1, 2)
             testCase.verifyEqual(doyActual,doyExpected)
         end
 
