@@ -10,4 +10,5 @@ end
 
 function myTask(~)
     disp('Hello World!')
+    error('my error')
 end
