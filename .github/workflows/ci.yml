@@ -35,8 +35,7 @@ jobs:
           echo $RUNNER_TEMP
           cd $RUNNER_TEMP
           ls
-          ls | grep buildSummary > $BUILD_SUMMARY
-          cat $BUILD_SUMMARY
+          cat "buildSummary${GITHUB_RUN_ID}.json"
 
       # As an alternative to run-tests, you can use run-command to execute a MATLAB script, function, or statement.
       #- name: Run all tests
