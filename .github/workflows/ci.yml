@@ -35,7 +35,8 @@ jobs:
           echo $RUNNER_TEMP
           cd $RUNNER_TEMP
           ls
-          cat | ls | grep buildSummary
+          ls | grep buildSummary > $BUILD_SUMMARY
+          cat $BUILD_SUMMARY
 
       # As an alternative to run-tests, you can use run-command to execute a MATLAB script, function, or statement.
       #- name: Run all tests
