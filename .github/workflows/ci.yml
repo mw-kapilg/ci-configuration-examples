@@ -36,6 +36,9 @@ jobs:
       #     cd $RUNNER_TEMP
       #     ls
       #     cat "buildSummary${GITHUB_RUN_ID}.json"
+
+      - uses: dorny/test-reporter@v1.9.1
+      
       - run: |
           echo "::error file=tAnswerIsCorrect.m,line=10,endLine=12,title=Run MATLAB Tests exited with non-zero exit code::Verification failed in tAnswerIsCorrect/verifyCorrect"
           exit 1
