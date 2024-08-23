@@ -36,7 +36,7 @@ jobs:
       #     cd $RUNNER_TEMP
       #     ls
       #     cat "buildSummary${GITHUB_RUN_ID}.json"
-      - run: echo "::error file=tAnswerIsCorrect.m,line=10,endLine=12::Verification failed in tAnswerIsCorrect/verifyCorrect"
+      - run: echo "::error file=tAnswerIsCorrect.m,line=10,endLine=12,title=Verification failed in tAnswerIsCorrect/verifyCorrect::---------------------\nFramework Diagnostic:\n---------------------\nverifyTrue failed.\n--> The value must evaluate to "true".\n\nActual Value:\n  logical\n\n0\n------------------\nStack Information:\n------------------\nIn C:\Users\kapilg\OneDrive - MathWorks\Documents\MATLAB\Examples\R2024a\matlab\ExploreAnExampleProjectExample8\TimesTableApp\tests\tAnswerIsCorrect.m (tAnswerIsCorrect.verifyCorrect) at 22"
 
       # As an alternative to run-tests, you can use run-command to execute a MATLAB script, function, or statement.
       #- name: Run all tests
