@@ -31,7 +31,7 @@ classdef TestExamples < matlab.unittest.TestCase
             doyActual = dayofyear(dateStr);
 
             % Verify that the two are equal
-            testCase.verifyEqual(1, 2)
+            % testCase.verifyEqual(1, 2)
             testCase.verifyEqual(doyActual,doyExpected)
         end
 
@@ -47,7 +47,7 @@ classdef TestExamples < matlab.unittest.TestCase
             doyActual = dayofyear(dateStr);
 
             % Verify that the two are equal
-            testCase.verifyNotEqual(doyActual,doyExpected)
+            testCase.verifyEqual(doyActual,doyExpected)
         end
 
         function testInvalidDateFormat(testCase)
