@@ -44,7 +44,7 @@ jobs:
       - name: Run build
         uses: matlab-actions/run-build@v2
         with:
-          tasks: 
+          tasks: my1 my2 my3 -skip my2
 
       # - run: |
       #     echo $RUNNER_TEMP
