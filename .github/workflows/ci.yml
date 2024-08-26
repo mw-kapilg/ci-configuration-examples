@@ -59,7 +59,7 @@ jobs:
       #     path: '*.xml'
       #     reporter: java-junit
       
-      - run: echo ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+      - run: echo ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}/job/${{ github.job_id }}
       
       - run: |
           echo "::error file=tAnswerIsCorrect.m,line=10,endLine=12,title=Run MATLAB Tests exited with non-zero exit code::Verification failed in tAnswerIsCorrect/verifyCorrect"
