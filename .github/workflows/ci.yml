@@ -41,10 +41,10 @@ jobs:
           path: results.xml
           name: results.xml
       
-      # - name: Run build
-      #   uses: matlab-actions/run-build@v2
-      #   with:
-      #     tasks: my1 my2 my3 -skip my2
+      - name: Run build
+        uses: matlab-actions/run-build@868e7f6fe241e981a82cdeb55e30e6616317f51a
+        with:
+          tasks: my1 my2 my3 -skip my2
 
       # - run: |
       #     echo $RUNNER_TEMP
