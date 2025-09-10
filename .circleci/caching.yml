@@ -1,0 +1,38 @@
+version: 2.1
+orbs:
+  matlab: mathworks/matlab@dev:6b37e4872c89afa846107eeba9de492861d9caca
+  win: circleci/windows@5
+
+executors:
+  linux:
+    machine:
+      image: default
+  macos:
+    macos:
+      xcode: 15.3.0
+    resource_class: macos.m1.medium.gen1
+  windows:
+    win/default
+
+jobs:
+  build:
+    parameters:
+      os:
+        type: executor
+    executor: << parameters.os >>
+    steps:
+      - checkout
+      - matlab/install:
+          products: >
+            Simulink
+          cache: true
+          release: R2024b
+      - matlab/run-command:
+          command: version
+workflows:
+  test-caching-cross-platform:
+    jobs:
+      - build:
+          matrix:
+            parameters:
+              os: [linux, macos, windows]
