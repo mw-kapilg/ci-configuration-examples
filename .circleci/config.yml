@@ -23,10 +23,10 @@ jobs:
     steps:
       - checkout
       - matlab/install:
-          products: >
-            Simulink
+          # products: >
+          #   Simulink
           cache: true
-          release: R2024b
+          # release: R2024b
       - matlab/run-command:
           command: version
 workflows:
