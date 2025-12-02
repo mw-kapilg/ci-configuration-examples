@@ -19,7 +19,10 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - run: echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
+      - run: |
+          echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
+          echo $GITHUB_STEP_SUMMARY
+          cat "$GITHUB_STEP_SUMMARY"
       - run: |
           echo $GITHUB_STEP_SUMMARY
           cat "$GITHUB_STEP_SUMMARY"
