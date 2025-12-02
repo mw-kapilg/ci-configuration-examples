@@ -20,7 +20,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - run: echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
-      - run: |
-          grep "Hello world" "$GITHUB_STEP_SUMMARY"
-          grep "MATLAB Build Results" "$GITHUB_STEP_SUMMARY"
-          grep "MATLAB Test Results" "$GITHUB_STEP_SUMMARY"
+      - run: echo $GITHUB_STEP_SUMMARY
+      - run: grep "Hello world" "$GITHUB_STEP_SUMMARY"
+      - run: grep "MATLAB Build Results" "$GITHUB_STEP_SUMMARY"
+      - run: grep "MATLAB Test Results" "$GITHUB_STEP_SUMMARY"
