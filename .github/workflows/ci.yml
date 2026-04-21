@@ -30,7 +30,7 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Run all tests
-        uses: matlab-actions/run-tests@v3
+        uses: matlab-actions/run-tests@v3.1.0
         with:
           source-folder: code
 
