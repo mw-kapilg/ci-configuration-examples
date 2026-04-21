@@ -33,6 +33,7 @@ jobs:
         uses: matlab-actions/run-tests@v3.1.0
         with:
           source-folder: code
+          code-coverage-metric-level: statement
 
       - name: Set up MATLAB
         uses: matlab-actions/setup-matlab@v3
@@ -43,6 +44,7 @@ jobs:
         uses: matlab-actions/run-tests@v3.1.0
         with:
           source-folder: code
+          code-coverage-metric-level: statement
 
       # You can use "run-build" to invoke the MATLAB build tool and run build tasks
       #- name: Run the default "test" task in the build file
