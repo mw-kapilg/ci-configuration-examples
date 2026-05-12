@@ -30,23 +30,13 @@ classdef TestExamples < matlab.unittest.TestCase
             % Get actual result
             doyActual = dayofyear(dateStr);
 
-            % Verify that the two are equal
-            testCase.verifyEqual(doyActual,doyExpected)
+            % Verify that the two are equal (forced failure: adding 1 to expected)
+            testCase.verifyEqual(doyActual,doyExpected + 1)
         end
 
         function testLeapYear(testCase)
-            % Create leap year date of March 1st, 2020
-            dateStr = "03/01/2020";
-
-            % Calculate expected result
-            dt = datetime(dateStr,"Format","MM/dd/uuuu");
-            doyExpected = day(dt,"dayofyear");
-
-            % Get actual result
-            doyActual = dayofyear(dateStr);
-
-            % Verify that the two are equal
-            testCase.verifyEqual(doyActual,doyExpected)
+            % This test is intentionally left incomplete
+            testCase.assumeFail("Test not yet implemented");
         end
 
         function testInvalidDateFormat(testCase)

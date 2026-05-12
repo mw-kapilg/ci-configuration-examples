@@ -39,8 +39,16 @@ jobs:
       # - name: Run the default "test" task in the build file
       #   uses: matlab-actions/run-build@v3
 
-      # You can use "run-command" to execute custom MATLAB scripts, functions, or statements
-      - name: Run custom testing procedure
-        uses: matlab-actions/run-command@v3
+      # Run tests with code coverage using run-tests action
+      - name: Run tests with code coverage
+        uses: matlab-actions/run-tests@v3
         with:
-          command: disp('Running my custom testing procedure!'); addpath('code'); results = runtests('IncludeSubfolders', true); results = runtests('IncludeSubfolders', true); assertSuccess(results);
+          source-folder: code
+          code-coverage-cobertura-file: coverage/cobertura.xml
+
+      # Upload code coverage artifact
+      - name: Upload code coverage artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: code-coverage-report
+          path: coverage/cobertura.xml
