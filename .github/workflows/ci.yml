@@ -34,6 +34,7 @@ jobs:
         uses: matlab-actions/run-tests@v3
         with:
           source-folder: code
+          generate-summary: false
 
       # You can use "run-build" to invoke the MATLAB build tool and run build tasks
       # - name: Run the default "test" task in the build file
