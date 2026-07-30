@@ -28,7 +28,7 @@ jobs:
         uses: matlab-actions/setup-matlab@v3
         with:
           products: MATLAB_Test
-          release: R2023a
+          # release: R2023a
 
       - name: disp hello
         uses: matlab-actions/run-command@v3.2
