@@ -27,7 +27,9 @@ jobs:
       - name: Set up MATLAB
         uses: matlab-actions/setup-matlab@v3
         with:
-          products: MATLAB_Test Parallel_Computing_Toolbox
+          products: |
+            Parallel_Computing_Toolbox
+          # MATLAB_Test
           release: R2021a
 
       # Runs a set of commands using the runners shell
